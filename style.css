@@ -1,0 +1,54 @@
+@font-face {
+    font-family: calculator;
+    src: url(./digital-7.ttf);
+}
+
+html {
+	font-size: 62.5%;
+}
+
+/*
+1rem = 10px
+1.5rem = 15px
+102.4rem = 1024px
+*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 96rem;
+    /* border: 1px black solid; */
+    font-family: calculator;
+}
+
+#keys {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 80rem;
+    border: 1px black solid;
+}
+
+#display {
+    width: 80rem;
+    height: 15rem;
+    font-family: inherit;
+    font-size: 15rem;
+    border: 1px black solid;
+    border-bottom: 0px;
+}
+
+.key {
+    font-size: 15rem;
+    width: 20rem;
+    height: 20rem;
+    font-family: inherit;
+}
