@@ -20,6 +20,19 @@ body {
     gap: 1rem;
 }
 
+button {
+    color: white;
+}
+
+p {
+    margin-right: 1rem;
+}
+
+#container {
+    background-color: black;
+    border: rgb(66, 66, 66) 1rem solid;
+}
+
 #calculator {
     display: flex;
     flex-direction: column;
@@ -27,6 +40,7 @@ body {
     max-width: 96rem;
     /* border: 1px black solid; */
     font-family: calculator;
+    color: white;
 }
 
 #keys {
@@ -45,13 +59,31 @@ body {
     height: 10rem;
     font-family: inherit;
     font-size: 10rem;
-    border: 1px black solid;
-    border-bottom: 0px;
+    /* border: 1px black solid;
+    border-bottom: 0px; */
+    background-color: grey;
+    border-bottom: rgb(66, 66, 66) 5px solid;
+}
+
+#digit-0 {
+    flex-grow: 1;
 }
 
 .key {
-    font-size: 10rem;
+    font-size: 6rem;
     width: 10rem;
-    height: 10rem;
+    height: 8rem;
     font-family: inherit;
+}
+
+.digit {
+    background-color: rgb(10, 60, 68);
+}
+
+.operator {
+    background-color: rgb(212, 138, 0);
+}
+
+.other {
+    background-color: rgb(50, 112, 255);
 }
