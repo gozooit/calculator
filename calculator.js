@@ -65,10 +65,39 @@ function simpleOperation(e) {
     // console.log(`pendingOpera = ${pendingOperation}`);
 }
 
+function chainOperation(e) {
+    if (e.target.id.match("digit*")) {
+        displayValue += e.target.textContent;
+        updateDisplay(displayValue);
+    } else if (operators.includes(e.target.id)) {
+        chainValue.push(displayValue);
+        chainValue.push(e.target.id);
+        displayValue = "";
+        updateDisplay(displayValue);
+    } else if ((e.target.id === "equal")) {
+        chainValue.push(displayValue);
+        chainValue.push(e.target.id);
+        for (i = 0; i < chainValue.length; i++) {
+            if (operators.includes(chainValue[i])) {
+                chainValue[i + 1] = operate(chainValue[i], chainValue[i - 1], chainValue[i + 1]);
+            } else if (chainValue[i] === "equal") {
+                displayValue = chainValue[i - 1];
+                updateDisplay(displayValue);
+            }
+        }
+    } else if (e.target.id === "clear") {
+        chainValue = [];
+        displayValue = "";
+        updateDisplay(displayValue);
+    }
+    console.log(chainValue);
+}
+
 let displayValue = "";
 let storedValue;
+let chainValue = [];
 let pendingOperation = null;
 const operators = ["add", "subtract", "multiply", "divide"];
 
 const keys = document.querySelectorAll('.key');
-keys.forEach(key => key.addEventListener('click', simpleOperation));
+keys.forEach(key => key.addEventListener('click', chainOperation));
