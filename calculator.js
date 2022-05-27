@@ -39,12 +39,19 @@ function updateDisplay(value) {
 }
 
 function plusMinus(value) {
-    arr = value.split("");
+    arr = value.split('');
+    console.log(arr);
     if (arr[0] === "-") {
         arr.shift();
     } else {
         arr.unshift("-");
     }
+    console.log(arr);
+    return arr.join('');
+}
+
+function percent(value) {
+    return value / 100;
 }
 
 function calculator(e) {
